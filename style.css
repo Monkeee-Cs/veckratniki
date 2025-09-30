@@ -1,0 +1,52 @@
+#title {
+    text-align: center;;
+}
+h3 {
+    text-align: center;
+}
+h3:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+p {
+    text-align: center;
+}
+.vec, .del, .svec, .credit {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+input {
+    width: 55px;
+    height: auto;
+}
+
+a {
+    height: auto;
+    width: auto;
+    color: black;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 500;
+    text-decoration: none;
+}
+a:hover {
+    background-color: black;
+    color: white;
+    text-decoration: underline;
+}
+a#link {
+    height: auto;
+    width: auto;
+    color: black;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 500;
+    text-decoration: none;
+}
+a#link:hover {
+    background-color: black;
+    color: white;
+    text-decoration: underline;
+}
