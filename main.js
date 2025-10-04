@@ -57,3 +57,50 @@ function veck(num, range) {
     }
     return `V${num} = {${arr.join(", ")}, ...}`;
 }
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Select all result elements
+    const results = document.querySelectorAll(".res");
+
+    // Create one observer for all of them
+    const observer = new MutationObserver(() => {
+        results.forEach(res => {
+            if (res.textContent.trim() !== "") {
+                res.classList.add("show");
+            } else {
+                res.classList.remove("show");
+            }
+        });
+    });
+
+    // Observe changes to each .res
+    results.forEach(res => {
+        observer.observe(res, { childList: true, characterData: true, subtree: true });
+    });
+
+
+
+    // Handle all forms / divs
+    document.querySelectorAll("div").forEach(div => {
+        const inputs = div.querySelectorAll("input[type='text'], input[type='number']");
+        const button = div.querySelector("button, input[type='button']");
+
+        inputs.forEach((input, index) => {
+            input.addEventListener("keydown", e => {
+                if (e.key === "Enter") {
+                    e.preventDefault(); // Prevent form from submitting prematurely
+
+                    // If not last input -> focus next
+                    if (index < inputs.length - 1) {
+                        inputs[index + 1].focus();
+                    }
+                    // If last input -> click button
+                    else if (button) {
+                        button.click();
+                    }
+                }
+            });
+        });
+    });
+});

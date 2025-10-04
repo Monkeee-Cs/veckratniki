@@ -1,79 +1,111 @@
-h1, h2, h3, p, .res {
-    color: white;
-}
-
+/* ===== Dark Mode Base ===== */
 body {
-    background-color: rgb(80,80,80);
+    font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #141E30, #243B55);
+    color: #EAEAEA;
+    margin: 0;
+    padding: 40px;
+    text-align: center;
 }
 
-#title {
-    text-align: center;
+/* Headings */
+h1, h2, h3 {
+    font-weight: 600;
+    color: #f0f4ff;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
-h3 {
-    text-align: center;
+
+/* Section Cards */
+section {
+    background: rgba(30, 40, 60, 0.85);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    padding: 25px;
+    margin: 20px auto;
+    max-width: 420px;
+    transition: transform 0.25s ease, box-shadow 0.3s ease;
 }
-h3:hover {
-    text-decoration: underline;
+
+section:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* Inputs */
+label {
+    display: block;
+    font-size: 0.9rem;
+    margin: 10px 0 5px;
+    color: #cdd9ff;
+}
+
+input[type="number"], input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #3a4a6a;
+    border-radius: 8px;
+    background: #1e293b;
+    color: #f8fafc;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+input:focus {
+    border-color: #4ea8de;
+    background: #23344f;
+    outline: none;
+}
+
+/* Buttons */
+button, input[type="submit"] {
+    margin-top: 15px;
+    background: linear-gradient(90deg, #3b82f6, #2563eb);
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
     cursor: pointer;
-}
-p {
-    text-align: center;
-}
-.vec, .del, .svec, .credit {
-    text-align: center;
-    font-size: 20px;
-    font-weight: 400;
+    font-size: 1rem;
+    transition: background 0.3s ease, transform 0.1s ease;
 }
 
-button {
-    width: 100px;
-    height: 25px;
-    font-size: 15px;
-    background-color: rgb(0, 162, 255);
-    color: white;
-    border: 2px solid white;
-    border-radius: 10px;
-    transition: 0.3s;
+button:hover, input[type="submit"]:hover {
+    background: linear-gradient(90deg, #60a5fa, #3b82f6);
+    transform: translateY(-2px);
 }
 
-button:hover {
-    background-color: white;
-    color: rgb(0, 162, 255);
-    cursor: pointer;
-    transition: 0.3s;
+/* ===== Result Area ===== */
+.res {
+    display: none; /* Hidden by default */
+    margin-top: 20px;
+    padding: 15px;
+    background: #1e293b;
+    border: 1px solid #3b4b6b;
+    border-radius: 8px;
+    color: #e5e7eb;
+    font-size: 1.1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease, background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-input {
-    width: 70px;
-    height: auto;
+/* When content is visible */
+.res.show {
+    display: block;
+    opacity: 1;
 }
 
-a {
-    height: auto;
-    width: auto;
-    color: white;
-    text-align: center;
-    font-size: 25px;
-    font-weight: 500;
-    text-decoration: none;
+/* Hover Effect */
+.res.show:hover {
+    background: #3b82f6;
+    color: #f8fafc;
+    border-color: #60a5fa;
 }
-a:hover {
-    background-color: white;
-    color: black;
-    text-decoration: underline;
-    border-radius: 5px;
-}
-a#link {
-    height: auto;
-    width: auto;
-    color: black;
-    text-align: center;
-    font-size: 25px;
-    font-weight: 500;
-    text-decoration: none;
-}
-a#link:hover {
-    background-color: black;
-    color: white;
-    text-decoration: underline;
+
+
+/* Footer */
+footer {
+    margin-top: 50px;
+    font-size: 0.85rem;
+    color: #9ca3af;
 }
